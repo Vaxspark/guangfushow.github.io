@@ -8,9 +8,9 @@ function echarts_zuo1() {
     var container = document.getElementById('场站能源需求');
     container.style.padding = fontSize(0.15) + "px";
     container.innerHTML = `
-    <div class="item" style="font-size: 0.25rem; color: rgba(33, 155, 208, 1) ;line-height: 0.7rem;">公交车总数：1652</div>
-    <div class="item" style="font-size: 0.25rem; color: rgba(33, 155, 208, 1) ;line-height: 0.7rem;">公交线路总数：161</div>
-    <div class="item" style="font-size: 0.25rem; color: rgba(33, 155, 208, 1) ;line-height: 0.7rem;">年总能耗（估）：431126（KWH）</div>
+    <div class="item" style="font-size: 0.25rem; color: rgba(33, 155, 208, 1) ;line-height: 0.7rem;">公交车总数：1652 辆</div>
+    <div class="item" style="font-size: 0.25rem; color: rgba(33, 155, 208, 1) ;line-height: 0.7rem;">公交线路总数：161 条</div>
+    <div class="item" style="font-size: 0.25rem; color: rgba(33, 155, 208, 1) ;line-height: 0.7rem;">年总能耗：431126 kWh</div>
     `;
     window.addEventListener("resize", function () {
         myChart.resize();
@@ -28,10 +28,10 @@ function echarts_zuo1_1(name) {
     if (data) {
         // 使用找到的数据更新页面内容
         container.innerHTML = `
-            <div class="item" style="font-size: 0.25rem; color: rgba(33, 155, 208, 1) ;line-height: 0.7rem;">场站停车数量：${data.tingcheshuliang}</div>
-            <div class="item" style="font-size: 0.25rem; color: rgba(33, 155, 208, 1) ;line-height: 0.7rem;">场站充电桩数：${data.chongdianzhuangshu}</div>
-            <div class="item" style="font-size: 0.25rem; color: rgba(33, 155, 208, 1) ;line-height: 0.7rem;">光伏装机容量：${data.guangfuzhuangjirongliang}</div>
-            <div class="item" style="font-size: 0.25rem; color: rgba(33, 155, 208, 1) ;line-height: 0.7rem;">储能容量：${data.chunengrongliang}</div>
+            <div class="item" style="font-size: 0.25rem; color: rgba(33, 155, 208, 1) ;line-height: 0.7rem;">场站停车数量：${data.tingcheshuliang} 辆</div>
+            <div class="item" style="font-size: 0.25rem; color: rgba(33, 155, 208, 1) ;line-height: 0.7rem;">场站充电桩数：${data.chongdianzhuangshu} 个</div>
+            <div class="item" style="font-size: 0.25rem; color: rgba(33, 155, 208, 1) ;line-height: 0.7rem;">光伏装机容量：${data.guangfuzhuangjirongliang} kWh</div>
+            <div class="item" style="font-size: 0.25rem; color: rgba(33, 155, 208, 1) ;line-height: 0.7rem;">储能容量：${data.chunengrongliang} kWh</div>
         `;
     } else {
         // 如果未找到匹配的数据，可以显示一条错误消息或者其他处理方式
@@ -148,11 +148,11 @@ function echarts_zuo31() {
         dataset: {//数据设置
             source: [
                 ['product', '有空调', '无空调'],
-                ['0-5000', 19, 29],
-                ['5001-10000', 10, 7],
-                ['10001-15000', 4, 2],
-                ['15001-20000', 4, 1],
-                ['20001-', 2, 0]
+                ['0-5000 kWh', 19, 29],
+                ['5001-10000 kWh', 10, 7],
+                ['10001-15000 kWh', 4, 2],
+                ['15001-20000 kWh', 4, 1],
+                ['20001- kWh', 2, 0]
             ]
         },
         xAxis: {//X轴的设置
@@ -172,7 +172,7 @@ function echarts_zuo31() {
         series: [//每个形状的设置
             {
                 type: 'bar',//柱状
-                barWidth: fontSize(0.3),// 每簇之间的距离
+                barWidth: fontSize(0.2),// 每簇之间的距离
                 color: '#6495ED',//柱状的颜色
                 label: {//提示的设置
                     normal: {
@@ -185,7 +185,7 @@ function echarts_zuo31() {
             {
                 type: 'bar',
                 color: '#CD5C5C',
-                barWidth: fontSize(0.3),
+                barWidth: fontSize(0.2),
                 barGap: '0%',//每簇中的每个柱状的距离 String形式
                 label: {
                     normal: {
@@ -205,116 +205,16 @@ function echarts_zuo31() {
     });
 }
 
-function echarts_you2() {
-    // 基于准备好的dom，初始化echarts实例
-    var myChart = echarts.init(document.getElementById('场站日光伏发电量分布'));
 
-    option = {
-        //  backgroundColor: '#00265f',
-        tooltip: {
-            trigger: 'axis',
-            axisPointer: {
-                type: 'shadow'
-            }
-        },
-
-        grid: {
-            left: '0%',
-            top: '10px',
-            right: '0%',
-            bottom: '2%',
-            containLabel: true
-        },
-        xAxis: [{
-            name: 'KWH',
-            type: 'category',
-            name: '范围',
-            data: ['0-1000', '1000-3000', '3000-5000', '5000-7000',],
-            axisLine: {
-                show: true,
-                lineStyle: {
-                    color: "rgba(255,255,255,.1)",
-                    width: 1,
-                    type: "solid"
-                },
-            },
-
-            axisTick: {
-                show: false,
-            },
-            axisLabel: {
-                interval: 0,
-
-                // rotate:50,
-                show: true,
-                splitNumber: 15,
-                textStyle: {
-                    color: "rgba(255,255,255,.6)",
-                    fontSize: '12',
-                },
-            },
-        }],
-        yAxis: [{
-
-            type: 'value',
-
-            axisLabel: {
-                //formatter: '{value} %'
-
-                show: true,
-                textStyle: {
-                    color: "rgba(255,255,255,.6)",
-                    fontSize: '12',
-                },
-            },
-            axisTick: {
-                show: false,
-            },
-            axisLine: {
-                show: true,
-                lineStyle: {
-                    color: "rgba(255,255,255,.1	)",
-                    width: 1,
-                    type: "solid"
-                },
-            },
-            splitLine: {
-                lineStyle: {
-                    color: "rgba(255,255,255,.1)",
-                }
-            }
-        }],
-        series: [{
-            type: 'bar',
-            data: [2, 3, 3, 9, 15, 12, 6, 4, 6, 7, 4, 10],
-            barWidth: '35%', //柱子宽度
-            // barGap: 1, //柱子之间间距
-            itemStyle: {
-                normal: {
-                    color: '#2f89cf',
-                    opacity: 1,
-                    barBorderRadius: 5,
-                }
-            }
-        }
-        ]
-    };
-
-    // 使用刚指定的配置项和数据显示图表。
-    myChart.setOption(option);
-    window.addEventListener("resize", function () {
-        myChart.resize();
-    });
-}
 
 function echarts_you1() {
     var container = document.getElementById('场站能源供给');
 
     container.style.padding = fontSize(0.15) + "px";
     container.innerHTML = `
-        <div class="item" style="font-size: 0.25rem; color: rgba(33, 155, 208, 1) ;line-height: 0.7rem;">装机容量：18.23858（MW）</div>
-        <div class="item" style="font-size: 0.25rem; color: rgba(33, 155, 208, 1) ;line-height: 0.7rem;">年光伏发电总量：33019439（KWH）</div>
-        <div class="item" style="font-size: 0.25rem; color: rgba(33, 155, 208, 1) ;line-height: 0.7rem;">储能容量：XX</div>
+        <div class="item" style="font-size: 0.25rem; color: rgba(33, 155, 208, 1) ;line-height: 0.7rem;">装机容量：18.23858 MW</div>
+        <div class="item" style="font-size: 0.25rem; color: rgba(33, 155, 208, 1) ;line-height: 0.7rem;">年光伏发电总量：33019439 kWh</div>
+        <div class="item" style="font-size: 0.25rem; color: rgba(33, 155, 208, 1) ;line-height: 0.7rem;">储能容量：1445.88 kWh</div>
         `;
     window.addEventListener("resize", function () {
         myChart.resize();

@@ -109,24 +109,24 @@ function initEcharts(geoJson, name, chart, alladcode) {
                         data: filterDataPoints(dataPoints, params.name)
                     }]
                 });
-                echarts.dispose(document.getElementById('场站日光伏发电量分布'));
-                document.querySelectorAll('.boxall .alltitle')[0].textContent = '场站能源需求'; // 获取所有具有类名为 "boxall" 的元素内部的 "alltitle" 元素
-                document.querySelectorAll('.boxall .alltitle')[1].textContent = '充电需求排名';
-                document.querySelectorAll('.boxall .alltitle')[2].textContent = '每日能耗分布';
-                document.querySelectorAll('.boxall .alltitle')[3].textContent = '场站能源供给';
-                document.querySelectorAll('.boxall .alltitle')[4].textContent = '场站日光伏发电量分布';
-                document.querySelectorAll('.boxall .alltitle')[5].textContent = '场站光伏发电量分布';
-                echarts.dispose(document.getElementById('fb1'));
-                echarts.dispose(document.getElementById('echart6'));
-                echarts.dispose(document.getElementById('充电需求排名'));
-                echarts_zuo1();
-                echarts_zuo2();
-                echarts_you1();
-                echarts_zuo31();
-                echarts_you2();
-
-                echarts_you3();
-
+                /*  echarts.dispose(document.getElementById('场站日光伏发电量分布'));
+                  document.querySelectorAll('.boxall .alltitle')[0].textContent = '场站能源需求'; // 获取所有具有类名为 "boxall" 的元素内部的 "alltitle" 元素
+                  document.querySelectorAll('.boxall .alltitle')[1].textContent = '充电需求排名';
+                  document.querySelectorAll('.boxall .alltitle')[2].textContent = '每日能耗分布';
+                  document.querySelectorAll('.boxall .alltitle')[3].textContent = '场站能源供给';
+                  document.querySelectorAll('.boxall .alltitle')[4].textContent = '场站日光伏发电量分布';
+                  document.querySelectorAll('.boxall .alltitle')[5].textContent = '场站光伏发电量分布';
+                  echarts.dispose(document.getElementById('fb1'));
+                  echarts.dispose(document.getElementById('echart6'));
+                  echarts.dispose(document.getElementById('充电需求排名'));
+                  echarts_zuo1();
+                  echarts_zuo2();
+                  echarts_you1();
+                  echarts_zuo31();
+                  echarts_you2();
+  
+                  echarts_you3();
+  */
             });
 
         }
@@ -140,12 +140,22 @@ function initEcharts(geoJson, name, chart, alladcode) {
         getGeoJson('640100_full.json').then(function (chinaGeoJson) {
             initEcharts(chinaGeoJson, '银川', chart, alladcode, dataPoints);
         });
+        echarts.dispose(document.getElementById('场站日光伏发电量分布'));
+        document.querySelectorAll('.boxall .alltitle')[0].textContent = '场站能源需求'; // 获取所有具有类名为 "boxall" 的元素内部的 "alltitle" 元素
+        document.querySelectorAll('.boxall .alltitle')[1].textContent = '充电需求排名';
+        document.querySelectorAll('.boxall .alltitle')[2].textContent = '每日能耗分布';
+        document.querySelectorAll('.boxall .alltitle')[3].textContent = '场站能源供给';
+        document.querySelectorAll('.boxall .alltitle')[4].textContent = '场站日光伏发电量分布';
+        document.querySelectorAll('.boxall .alltitle')[5].textContent = '场站光伏发电量分布';
+        echarts.dispose(document.getElementById('fb1'));
+        echarts.dispose(document.getElementById('echart6'));
+        echarts.dispose(document.getElementById('充电需求排名'));
         echarts_zuo1();
         echarts_zuo2();
         echarts_you1();
-        echarts_you3();
         echarts_zuo31();
         echarts_you2();
+
         echarts_you3();
     });
 
@@ -161,45 +171,45 @@ function filterDataPoints(dataPoints, mapName) {
     });
 }
 var dataPoints = [
-    { num: 1, name: "银川市公共交通有限公司", mianji: 2498, zujiangeshu: 1957.310036, zhuangjirongliang: 639.939, zuixiaogeshu: 8, wukongtiao: 6560.995345, youkongtiao: 14656.62034, tingkaoshuliang: 517, diqv: "金凤区", symbolSize: 12, value: [106.2385408, 38.52781197] },
-    { num: 2, name: "海宝东路公交首末站", mianji: 584, zujiangeshu: 457.5936994, zhuangjirongliang: 149.439, zuixiaogeshu: 4, wukongtiao: 2678.754738, youkongtiao: 5979.643627, tingkaoshuliang: 248, diqv: "兴庆区", symbolSize: 13, value: [106.3092683, 38.4845395] },
-    { num: 3, name: "银川市公共交通公司运营一分公司", mianji: 5806, zujiangeshu: 4549.296265, zhuangjirongliang: 1487.523, zuixiaogeshu: 6, wukongtiao: 8936.008592, youkongtiao: 18255.78081, tingkaoshuliang: 515, diqv: "西夏区", symbolSize: 14, value: [106.1667408, 38.49583284] },
-    { num: 4, name: "美德亨国际家居", mianji: 1030, zujiangeshu: 807.0573807, zhuangjirongliang: 263.889, zuixiaogeshu: 4, wukongtiao: 4503.014802, youkongtiao: 9241.284247, tingkaoshuliang: 245, diqv: "兴庆区", symbolSize: 15, value: [106.291006, 38.45369049] },
-    { num: 5, name: "览山公园", mianji: 1303, zujiangeshu: 1020.966764, zhuangjirongliang: 333.54, zuixiaogeshu: 3, wukongtiao: 2690.460484, youkongtiao: 5572.435484, tingkaoshuliang: 161, diqv: "金凤区", symbolSize: 16, value: [106.2144236, 38.53006015] },
-    { num: 6, name: "友爱公交车场", mianji: 715, zujiangeshu: 560.2388614, zhuangjirongliang: 183.12, zuixiaogeshu: 6, wukongtiao: 9233.497053, youkongtiao: 18632.10816, tingkaoshuliang: 563, diqv: "兴庆区", symbolSize: 17, value: [106.3141368, 38.46659081] },
-    { num: 7, name: "北门公交车场", mianji: 5276, zujiangeshu: 4134.014311, zhuangjirongliang: 1351.818, zuixiaogeshu: 5, wukongtiao: 7206.30242, youkongtiao: 15600.23575, tingkaoshuliang: 600, diqv: "兴庆区", symbolSize: 18, value: [106.289576, 38.47926551] },
-    { num: 8, name: "公交驾校", mianji: 1714, zujiangeshu: 1343.006166, zhuangjirongliang: 439.161, zuixiaogeshu: 4, wukongtiao: 5070.028496, youkongtiao: 10179.61183, tingkaoshuliang: 377, diqv: "金凤区", symbolSize: 19, value: [106.2243541, 38.42192387] },
-    { num: 9, name: "银川妇女儿童中心", mianji: 0, zujiangeshu: 0, zhuangjirongliang: 0, zuixiaogeshu: 3, wukongtiao: 2358.569366, youkongtiao: 5765.1027, tingkaoshuliang: 164, diqv: "金凤区", symbolSize: 20, value: [106.2241979, 38.45856946] },
-    { num: 10, name: "通达北街公交首末站", mianji: 600, zujiangeshu: 470.130513, zhuangjirongliang: 153.69, zuixiaogeshu: 9, wukongtiao: 10433.60981, youkongtiao: 21310.28203, tingkaoshuliang: 559, diqv: "金凤区", symbolSize: 21, value: [106.178093, 38.50954363] },
-    { num: 11, name: "石油城公交首末站", mianji: 2007, zujiangeshu: 1572.586566, zhuangjirongliang: 514.044, zuixiaogeshu: 4, wukongtiao: 2771.78397, youkongtiao: 5925.28397, tingkaoshuliang: 252, diqv: "兴庆区", symbolSize: 22, value: [106.3237385, 38.45370991] },
-    { num: 12, name: "八一车场", mianji: 854, zujiangeshu: 669.1524302, zhuangjirongliang: 218.763, zuixiaogeshu: 6, wukongtiao: 10287.0737, youkongtiao: 19827.97648, tingkaoshuliang: 531, diqv: "西夏区", symbolSize: 23, value: [106.1093031, 38.50412056] },
-    { num: 13, name: "中国银川国际商贸城", mianji: 162, zujiangeshu: 126.9352385, zhuangjirongliang: 41.202, zuixiaogeshu: 4, wukongtiao: 5195.624629, youkongtiao: 10084.2413, tingkaoshuliang: 405, diqv: "兴庆区", symbolSize: 24, value: [106.3141614, 38.49312806] },
-    { num: 14, name: "会展中心公交车场", mianji: 920, zujiangeshu: 720.8667867, zhuangjirongliang: 235.44, zuixiaogeshu: 5, wukongtiao: 3927.625919, youkongtiao: 7790.803697, tingkaoshuliang: 329, diqv: "金凤区", symbolSize: 25, value: [106.2170511, 38.48769533] },
-    { num: 15, name: "金凤工业园公交首末站", mianji: 1690, zujiangeshu: 1324.200945, zhuangjirongliang: 432.948, zuixiaogeshu: 3, wukongtiao: 1575.035637, youkongtiao: 3352.330081, tingkaoshuliang: 98, diqv: "金凤区", symbolSize: 26, value: [106.1552418, 38.4420653] },
-    { num: 16, name: "宁教基地公交首末站", mianji: 420, zujiangeshu: 329.0913591, zhuangjirongliang: 107.583, zuixiaogeshu: 2, wukongtiao: 1347.030135, youkongtiao: 2865.855135, tingkaoshuliang: 61, diqv: "西夏区", symbolSize: 27, value: [106.141756, 38.519825] },
-    { num: 17, name: "芦花洲公交首末站", mianji: 664, zujiangeshu: 520.2777678, zhuangjirongliang: 170.04, zuixiaogeshu: 3, wukongtiao: 908.2985847, youkongtiao: 1679.50414, tingkaoshuliang: 51, diqv: "西夏区", symbolSize: 28, value: [106.167498, 38.53580789] },
-    { num: 18, name: "化肥公交车场", mianji: 2080, zujiangeshu: 1629.785779, zhuangjirongliang: 532.683, zuixiaogeshu: 4, wukongtiao: 4418.465399, youkongtiao: 9030.334844, tingkaoshuliang: 314, diqv: "西夏区", symbolSize: 29, value: [106.0933243, 38.48655431] },
-    { num: 19, name: "满城南街公交首末站", mianji: 1991, zujiangeshu: 1560.049752, zhuangjirongliang: 510.12, zuixiaogeshu: 2, wukongtiao: 1452.267546, youkongtiao: 3064.070324, tingkaoshuliang: 146, diqv: "金凤区", symbolSize: 30, value: [106.1901266, 38.46059894] },
-    { num: 20, name: "迎宾广场", mianji: 5452, zujiangeshu: 4271.919262, zhuangjirongliang: 1396.617, zuixiaogeshu: 8, wukongtiao: 16088.13558, youkongtiao: 33297.69392, tingkaoshuliang: 1099, diqv: "兴庆区", symbolSize: 31, value: [106.2798059, 38.41840594] },
-    { num: 21, name: "永宁公交车场", mianji: 975, zujiangeshu: 763.9620837, zhuangjirongliang: 249.501, zuixiaogeshu: 6, wukongtiao: 5542.657453, youkongtiao: 11633.53245, tingkaoshuliang: 319, diqv: "永宁县", symbolSize: 32, value: [106.2635145, 38.26396708] },
-    { num: 22, name: "同心路市场公交首末站", mianji: 458, zujiangeshu: 358.8662916, zhuangjirongliang: 117.066, zuixiaogeshu: 3, wukongtiao: 1342.397093, youkongtiao: 2810.783204, tingkaoshuliang: 81, diqv: "西夏区", symbolSize: 33, value: [106.1178909, 38.48514945] },
-    { num: 23, name: "上前城南区", mianji: 1397, zujiangeshu: 1094.620545, zhuangjirongliang: 357.738, zuixiaogeshu: 4, wukongtiao: 3319.629354, youkongtiao: 7140.879354, tingkaoshuliang: 177, diqv: "兴庆区", symbolSize: 34, value: [106.2827133, 38.40816885] },
-    { num: 24, name: "高桥公交首末站", mianji: 650, zujiangeshu: 509.3080558, zhuangjirongliang: 166.443, zuixiaogeshu: 2, wukongtiao: 1451.541707, youkongtiao: 3050.938929, tingkaoshuliang: 118, diqv: "金凤区", symbolSize: 35, value: [106.2566836, 38.41327283] },
-    { num: 25, name: "文昌南街公交首末站（下客站）", mianji: 2145, zujiangeshu: 1680.716584, zhuangjirongliang: 549.36, zuixiaogeshu: 1, wukongtiao: 832.2742652, youkongtiao: 1542.165932, tingkaoshuliang: 50, diqv: "西夏区", symbolSize: 36, value: [106.1015928, 38.41238811] },
-    { num: 26, name: "永宁王太公交首末站", mianji: 100, zujiangeshu: 78.35508551, zhuangjirongliang: 25.506, zuixiaogeshu: 3, wukongtiao: 1098.72203, youkongtiao: 2082.883141, tingkaoshuliang: 90, diqv: "永宁县", symbolSize: 37, value: [106.245279, 38.24606953] },
-    { num: 27, name: "贺兰县政务中心", mianji: 180, zujiangeshu: 141.0391539, zhuangjirongliang: 46.107, zuixiaogeshu: 2, wukongtiao: 732.1068714, youkongtiao: 1562.681871, tingkaoshuliang: 86, diqv: "贺兰县", symbolSize: 38, value: [106.358846, 38.5772893] },
-    { num: 28, name: "永宁县李俊通桥客运站", mianji: 387, zujiangeshu: 303.2341809, zhuangjirongliang: 99.081, zuixiaogeshu: 1, wukongtiao: 93.07275305, youkongtiao: 213.3505308, tingkaoshuliang: 4, diqv: "永宁县", symbolSize: 39, value: [106.3287462, 38.36743601] },
-    { num: 29, name: "公交服务大厅", mianji: 1271, zujiangeshu: 995.8931368, zhuangjirongliang: 325.365, zuixiaogeshu: 3, wukongtiao: 1432.051945, youkongtiao: 3084.960279, tingkaoshuliang: 119, diqv: "兴庆区", symbolSize: 40, value: [106.2699674, 38.46194357] },
-    { num: 30, name: "景安公交首末站", mianji: 603, zujiangeshu: 472.4811656, zhuangjirongliang: 154.344, zuixiaogeshu: 5, wukongtiao: 2871.711806, youkongtiao: 6686.292361, tingkaoshuliang: 268, diqv: "金凤区", symbolSize: 41, value: [106.2644186, 38.50926318] },
-    { num: 31, name: "滨河公交枢纽站", mianji: 2578, zujiangeshu: 2019.994104, zhuangjirongliang: 660.213, zuixiaogeshu: 3, wukongtiao: 1620.611892, youkongtiao: 2674.986892, tingkaoshuliang: 83, diqv: "兴庆区", symbolSize: 42, value: [106.4780128, 38.35794975] },
-    { num: 32, name: "掌政公交首末站", mianji: 4280, zujiangeshu: 3353.59766, zhuangjirongliang: 1096.431, zuixiaogeshu: 2, wukongtiao: 714.7792974, youkongtiao: 1656.973742, tingkaoshuliang: 51, diqv: "兴庆区", symbolSize: 43, value: [106.3606077, 38.41349291] },
-    { num: 33, name: "闽宁镇客运站", mianji: 1452, zujiangeshu: 1137.715842, zhuangjirongliang: 371.799, zuixiaogeshu: 1, wukongtiao: 172.6735687, youkongtiao: 260.3930132, tingkaoshuliang: 8, diqv: "永宁县", symbolSize: 44, value: [105.9734987, 38.24360987] },
-    { num: 34, name: "昊升汽车城", mianji: 1760, zujiangeshu: 1379.049505, zhuangjirongliang: 450.933, zuixiaogeshu: 4, wukongtiao: 2016.625776, youkongtiao: 4719.700776, tingkaoshuliang: 118, diqv: "永宁县", symbolSize: 45, value: [106.2612593, 38.34246756] },
-    { num: 35, name: "贺兰县烟草公司", mianji: 180, zujiangeshu: 141.0391539, zhuangjirongliang: 46.107, zuixiaogeshu: 3, wukongtiao: 1733.664804, youkongtiao: 4140.478693, tingkaoshuliang: 162, diqv: "贺兰县", symbolSize: 46, value: [106.3376842, 38.54505145] },
-    { num: 36, name: "西夏广场公交首末站", mianji: 318, zujiangeshu: 249.1691719, zhuangjirongliang: 81.423, zuixiaogeshu: 3, wukongtiao: 2876.960059, youkongtiao: 4811.535059, tingkaoshuliang: 128, diqv: "西夏区", symbolSize: 47, value: [106.0278875, 38.48509187] },
-    { num: 37, name: "陆坊公交车场", mianji: 3449, zujiangeshu: 2702.466899, zhuangjirongliang: 883.554, zuixiaogeshu: 1, wukongtiao: 70.09286286, youkongtiao: 156.3206406, tingkaoshuliang: 2, diqv: "永宁县", symbolSize: 48, value: [106.2263929, 38.36974626] },
-    { num: 38, name: "海吉星物流中心", mianji: 12548, zujiangeshu: 9831.996129, zhuangjirongliang: 3214.737, zuixiaogeshu: 1, wukongtiao: 1621.727495, youkongtiao: 3453.044162, tingkaoshuliang: 89, diqv: "贺兰县", symbolSize: 49, value: [106.3292172, 38.58008786] },
-    { num: 39, name: "奥特莱斯附近", mianji: 686, zujiangeshu: 537.5158866, zhuangjirongliang: 175.599, zuixiaogeshu: 3, wukongtiao: 3252.073287, youkongtiao: 6895.787176, tingkaoshuliang: 152, diqv: "贺兰县", symbolSize: 50, value: [106.296962, 38.58361056] }
+    { num: 1, name: "银川市公共交通有限公司", mianji: 2498, zujiangeshu: 1957.310036, zhuangjirongliang: 639.939, zuixiaogeshu: 8, wukongtiao: 6560.995345, youkongtiao: 14656.62034, tingkaoshuliang: 517, diqv: "金凤区", symbolSize: 12, value: [106.2385408, 38.52781197], chunengrongliang: 5.831284713 },
+    { num: 2, name: "海宝东路公交首末站", mianji: 584, zujiangeshu: 457.5936994, zhuangjirongliang: 149.439, zuixiaogeshu: 4, wukongtiao: 2678.754738, youkongtiao: 5979.643627, tingkaoshuliang: 248, diqv: "兴庆区", symbolSize: 13, value: [106.3092683, 38.4845395], chunengrongliang: 2.382146791 },
+    { num: 3, name: "银川市公共交通公司运营一分公司", mianji: 5806, zujiangeshu: 4549.296265, zhuangjirongliang: 1487.523, zuixiaogeshu: 6, wukongtiao: 8936.008592, youkongtiao: 18255.78081, tingkaoshuliang: 515, diqv: "西夏区", symbolSize: 14, value: [106.1667408, 38.49583284], chunengrongliang: 11.32488174 },
+    { num: 4, name: "美德亨国际家居", mianji: 1030, zujiangeshu: 807.0573807, zhuangjirongliang: 263.889, zuixiaogeshu: 4, wukongtiao: 4503.014802, youkongtiao: 9241.284247, tingkaoshuliang: 245, diqv: "兴庆区", symbolSize: 15, value: [106.291006, 38.45369049], chunengrongliang: 6.003266897 },
+    { num: 5, name: "览山公园", mianji: 1303, zujiangeshu: 1020.966764, zhuangjirongliang: 333.54, zuixiaogeshu: 3, wukongtiao: 2690.460484, youkongtiao: 5572.435484, tingkaoshuliang: 161, diqv: "金凤区", symbolSize: 16, value: [106.2144236, 38.53006015], chunengrongliang: 59.27869994 },
+    { num: 6, name: "友爱公交车场", mianji: 715, zujiangeshu: 560.2388614, zhuangjirongliang: 183.12, zuixiaogeshu: 6, wukongtiao: 9233.497053, youkongtiao: 18632.10816, tingkaoshuliang: 563, diqv: "兴庆区", symbolSize: 17, value: [106.3141368, 38.46659081], chunengrongliang: 0 },
+    { num: 7, name: "北门公交车场", mianji: 5276, zujiangeshu: 4134.014311, zhuangjirongliang: 1351.818, zuixiaogeshu: 5, wukongtiao: 7206.30242, youkongtiao: 15600.23575, tingkaoshuliang: 600, diqv: "兴庆区", symbolSize: 18, value: [106.289576, 38.47926551], chunengrongliang: 13.35429825 },
+    { num: 8, name: "公交驾校", mianji: 1714, zujiangeshu: 1343.006166, zhuangjirongliang: 439.161, zuixiaogeshu: 4, wukongtiao: 5070.028496, youkongtiao: 10179.61183, tingkaoshuliang: 377, diqv: "金凤区", symbolSize: 19, value: [106.2243541, 38.42192387], chunengrongliang: 0.865069805 },
+    { num: 9, name: "银川妇女儿童中心", mianji: 0, zujiangeshu: 0, zhuangjirongliang: 0, zuixiaogeshu: 3, wukongtiao: 2358.569366, youkongtiao: 5765.1027, tingkaoshuliang: 164, diqv: "金凤区", symbolSize: 20, value: [106.2241979, 38.45856946], chunengrongliang: 0 },
+    { num: 10, name: "通达北街公交首末站", mianji: 600, zujiangeshu: 470.130513, zhuangjirongliang: 153.69, zuixiaogeshu: 9, wukongtiao: 10433.60981, youkongtiao: 21310.28203, tingkaoshuliang: 559, diqv: "金凤区", symbolSize: 21, value: [106.178093, 38.50954363], chunengrongliang: 0.263592696 },
+    { num: 11, name: "石油城公交首末站", mianji: 2007, zujiangeshu: 1572.586566, zhuangjirongliang: 514.044, zuixiaogeshu: 4, wukongtiao: 2771.78397, youkongtiao: 5925.28397, tingkaoshuliang: 252, diqv: "兴庆区", symbolSize: 22, value: [106.3237385, 38.45370991], chunengrongliang: 2.595535372 },
+    { num: 12, name: "八一车场", mianji: 854, zujiangeshu: 669.1524302, zhuangjirongliang: 218.763, zuixiaogeshu: 6, wukongtiao: 10287.0737, youkongtiao: 19827.97648, tingkaoshuliang: 531, diqv: "西夏区", symbolSize: 23, value: [106.1093031, 38.50412056], chunengrongliang: 2.324375126 },
+    { num: 13, name: "中国银川国际商贸城", mianji: 162, zujiangeshu: 126.9352385, zhuangjirongliang: 41.202, zuixiaogeshu: 4, wukongtiao: 5195.624629, youkongtiao: 10084.2413, tingkaoshuliang: 405, diqv: "兴庆区", symbolSize: 24, value: [106.3141614, 38.49312806], chunengrongliang: 0 },
+    { num: 14, name: "会展中心公交车场", mianji: 920, zujiangeshu: 720.8667867, zhuangjirongliang: 235.44, zuixiaogeshu: 5, wukongtiao: 3927.625919, youkongtiao: 7790.803697, tingkaoshuliang: 329, diqv: "金凤区", symbolSize: 25, value: [106.2170511, 38.48769533], chunengrongliang: 2.242919189 },
+    { num: 15, name: "金凤工业园公交首末站", mianji: 1690, zujiangeshu: 1324.200945, zhuangjirongliang: 432.948, zuixiaogeshu: 3, wukongtiao: 1575.035637, youkongtiao: 3352.330081, tingkaoshuliang: 98, diqv: "金凤区", symbolSize: 26, value: [106.1552418, 38.4420653], chunengrongliang: 56.58555198 },
+    { num: 16, name: "宁教基地公交首末站", mianji: 420, zujiangeshu: 329.0913591, zhuangjirongliang: 107.583, zuixiaogeshu: 2, wukongtiao: 1347.030135, youkongtiao: 2865.855135, tingkaoshuliang: 61, diqv: "西夏区", symbolSize: 27, value: [106.141756, 38.519825], chunengrongliang: 2.512363099 },
+    { num: 17, name: "芦花洲公交首末站", mianji: 664, zujiangeshu: 520.2777678, zhuangjirongliang: 170.04, zuixiaogeshu: 3, wukongtiao: 908.2985847, youkongtiao: 1679.50414, tingkaoshuliang: 51, diqv: "西夏区", symbolSize: 28, value: [106.167498, 38.53580789], chunengrongliang: 108.9734963 },
+    { num: 18, name: "化肥公交车场", mianji: 2080, zujiangeshu: 1629.785779, zhuangjirongliang: 532.683, zuixiaogeshu: 4, wukongtiao: 4418.465399, youkongtiao: 9030.334844, tingkaoshuliang: 314, diqv: "西夏区", symbolSize: 29, value: [106.0933243, 38.48655431], chunengrongliang: 2.990825463 },
+    { num: 19, name: "满城南街公交首末站", mianji: 1991, zujiangeshu: 1560.049752, zhuangjirongliang: 510.12, zuixiaogeshu: 2, wukongtiao: 1452.267546, youkongtiao: 3064.070324, tingkaoshuliang: 146, diqv: "金凤区", symbolSize: 30, value: [106.1901266, 38.46059894], chunengrongliang: 52.13603479 },
+    { num: 20, name: "迎宾广场", mianji: 5452, zujiangeshu: 4271.919262, zhuangjirongliang: 1396.617, zuixiaogeshu: 8, wukongtiao: 16088.13558, youkongtiao: 33297.69392, tingkaoshuliang: 1099, diqv: "兴庆区", symbolSize: 31, value: [106.2798059, 38.41840594], chunengrongliang: 0 },
+    { num: 21, name: "永宁公交车场", mianji: 975, zujiangeshu: 763.9620837, zhuangjirongliang: 249.501, zuixiaogeshu: 6, wukongtiao: 5542.657453, youkongtiao: 11633.53245, tingkaoshuliang: 319, diqv: "永宁县", symbolSize: 32, value: [106.2635145, 38.26396708], chunengrongliang: 0.054901849 },
+    { num: 22, name: "同心路市场公交首末站", mianji: 458, zujiangeshu: 358.8662916, zhuangjirongliang: 117.066, zuixiaogeshu: 3, wukongtiao: 1342.397093, youkongtiao: 2810.783204, tingkaoshuliang: 81, diqv: "西夏区", symbolSize: 33, value: [106.1178909, 38.48514945], chunengrongliang: 34.33697148 },
+    { num: 23, name: "上前城南区", mianji: 1397, zujiangeshu: 1094.620545, zhuangjirongliang: 357.738, zuixiaogeshu: 4, wukongtiao: 3319.629354, youkongtiao: 7140.879354, tingkaoshuliang: 177, diqv: "兴庆区", symbolSize: 34, value: [106.2827133, 38.40816885], chunengrongliang: 25.87638602 },
+    { num: 24, name: "高桥公交首末站", mianji: 650, zujiangeshu: 509.3080558, zhuangjirongliang: 166.443, zuixiaogeshu: 2, wukongtiao: 1451.541707, youkongtiao: 3050.938929, tingkaoshuliang: 118, diqv: "金凤区", symbolSize: 35, value: [106.2566836, 38.41327283], chunengrongliang: 9.899652145 },
+    { num: 25, name: "文昌南街公交首末站（下客站）", mianji: 2145, zujiangeshu: 1680.716584, zhuangjirongliang: 549.36, zuixiaogeshu: 1, wukongtiao: 832.2742652, youkongtiao: 1542.165932, tingkaoshuliang: 50, diqv: "西夏区", symbolSize: 36, value: [106.1015928, 38.41238811], chunengrongliang: 751.4025946 },
+    { num: 26, name: "永宁王太公交首末站", mianji: 100, zujiangeshu: 78.35508551, zhuangjirongliang: 25.506, zuixiaogeshu: 3, wukongtiao: 1098.72203, youkongtiao: 2082.883141, tingkaoshuliang: 90, diqv: "永宁县", symbolSize: 37, value: [106.245279, 38.24606953], chunengrongliang: 3.823872709 },
+    { num: 27, name: "贺兰县政务中心", mianji: 180, zujiangeshu: 141.0391539, zhuangjirongliang: 46.107, zuixiaogeshu: 2, wukongtiao: 732.1068714, youkongtiao: 1562.681871, tingkaoshuliang: 86, diqv: "贺兰县", symbolSize: 38, value: [106.358846, 38.5772893], chunengrongliang: 8.273859383 },
+    { num: 28, name: "永宁县李俊通桥客运站", mianji: 387, zujiangeshu: 303.2341809, zhuangjirongliang: 99.081, zuixiaogeshu: 1, wukongtiao: 93.07275305, youkongtiao: 213.3505308, tingkaoshuliang: 4, diqv: "永宁县", symbolSize: 39, value: [106.3287462, 38.36743601], chunengrongliang: 0 },
+    { num: 29, name: "公交服务大厅", mianji: 1271, zujiangeshu: 995.8931368, zhuangjirongliang: 325.365, zuixiaogeshu: 3, wukongtiao: 1432.051945, youkongtiao: 3084.960279, tingkaoshuliang: 119, diqv: "兴庆区", symbolSize: 40, value: [106.2699674, 38.46194357], chunengrongliang: 19.22374081 },
+    { num: 30, name: "景安公交首末站", mianji: 603, zujiangeshu: 472.4811656, zhuangjirongliang: 154.344, zuixiaogeshu: 5, wukongtiao: 2871.711806, youkongtiao: 6686.292361, tingkaoshuliang: 268, diqv: "金凤区", symbolSize: 41, value: [106.2644186, 38.50926318], chunengrongliang: 3.912526056 },
+    { num: 31, name: "滨河公交枢纽站", mianji: 2578, zujiangeshu: 2019.994104, zhuangjirongliang: 660.213, zuixiaogeshu: 3, wukongtiao: 1620.611892, youkongtiao: 2674.986892, tingkaoshuliang: 83, diqv: "兴庆区", symbolSize: 42, value: [106.4780128, 38.35794975], chunengrongliang: 191.9432995 },
+    { num: 32, name: "掌政公交首末站", mianji: 4280, zujiangeshu: 3353.59766, zhuangjirongliang: 1096.431, zuixiaogeshu: 2, wukongtiao: 714.7792974, youkongtiao: 1656.973742, tingkaoshuliang: 51, diqv: "兴庆区", symbolSize: 43, value: [106.3606077, 38.41349291], chunengrongliang: 0 },
+    { num: 33, name: "闽宁镇客运站", mianji: 1452, zujiangeshu: 1137.715842, zhuangjirongliang: 371.799, zuixiaogeshu: 1, wukongtiao: 172.6735687, youkongtiao: 260.3930132, tingkaoshuliang: 8, diqv: "永宁县", symbolSize: 44, value: [105.9734987, 38.24360987], chunengrongliang: 0 },
+    { num: 34, name: "昊升汽车城", mianji: 1760, zujiangeshu: 1379.049505, zhuangjirongliang: 450.933, zuixiaogeshu: 4, wukongtiao: 2016.625776, youkongtiao: 4719.700776, tingkaoshuliang: 118, diqv: "永宁县", symbolSize: 45, value: [106.2612593, 38.34246756], chunengrongliang: 36.12516164 },
+    { num: 35, name: "贺兰县烟草公司", mianji: 180, zujiangeshu: 141.0391539, zhuangjirongliang: 46.107, zuixiaogeshu: 3, wukongtiao: 1733.664804, youkongtiao: 4140.478693, tingkaoshuliang: 162, diqv: "贺兰县", symbolSize: 46, value: [106.3376842, 38.54505145], chunengrongliang: 1.490914209 },
+    { num: 36, name: "西夏广场公交首末站", mianji: 318, zujiangeshu: 249.1691719, zhuangjirongliang: 81.423, zuixiaogeshu: 3, wukongtiao: 2876.960059, youkongtiao: 4811.535059, tingkaoshuliang: 128, diqv: "西夏区", symbolSize: 47, value: [106.0278875, 38.48509187], chunengrongliang: 1.129840706 },
+    { num: 37, name: "陆坊公交车场", mianji: 3449, zujiangeshu: 2702.466899, zhuangjirongliang: 883.554, zuixiaogeshu: 1, wukongtiao: 70.09286286, youkongtiao: 156.3206406, tingkaoshuliang: 2, diqv: "永宁县", symbolSize: 48, value: [106.2263929, 38.36974626], chunengrongliang: 0 },
+    { num: 38, name: "海吉星物流中心", mianji: 12548, zujiangeshu: 9831.996129, zhuangjirongliang: 3214.737, zuixiaogeshu: 1, wukongtiao: 1621.727495, youkongtiao: 3453.044162, tingkaoshuliang: 89, diqv: "贺兰县", symbolSize: 49, value: [106.3292172, 38.58008786], chunengrongliang: 0 },
+    { num: 39, name: "奥特莱斯附近", mianji: 686, zujiangeshu: 537.5158866, zhuangjirongliang: 175.599, zuixiaogeshu: 3, wukongtiao: 3252.073287, youkongtiao: 6895.787176, tingkaoshuliang: 152, diqv: "贺兰县", symbolSize: 50, value: [106.296962, 38.58361056], chunengrongliang: 28.72293549 }
 ]
 function echarts_zuo1_1(name) {
     var container = document.getElementById('场站能源需求');
@@ -212,10 +222,10 @@ function echarts_zuo1_1(name) {
     if (data) {
         // 使用找到的数据更新页面内容
         container.innerHTML = `
-            <div class="item" style="font-size: 0.3rem; color: rgba(33, 155, 208, 1) ;line-height: 0.5rem;">场站停车数量：${data.tingkaoshuliang}</div>
-            <div class="item" style="font-size: 0.3rem; color: rgba(33, 155, 208, 1) ;line-height: 0.5rem;">场站充电桩数：${data.zuixiaogeshu}</div>
-            <div class="item" style="font-size: 0.3rem; color: rgba(33, 155, 208, 1) ;line-height: 0.5rem;">光伏装机容量：${data.zhuangjirongliang}</div>
-            <div class="item" style="font-size: 0.3rem; color: rgba(33, 155, 208, 1) ;line-height: 0.5rem;">储能容量：${data.youkongtiao}</div>
+            <div class="item" style="font-size: 0.3rem; color: rgba(33, 155, 208, 1) ;line-height: 0.5rem;">场站停车数量：${data.tingkaoshuliang} 辆</div>
+            <div class="item" style="font-size: 0.3rem; color: rgba(33, 155, 208, 1) ;line-height: 0.5rem;">场站充电桩数：${data.zuixiaogeshu} 个</div>
+            <div class="item" style="font-size: 0.3rem; color: rgba(33, 155, 208, 1) ;line-height: 0.5rem;">光伏装机容量：${data.zhuangjirongliang} kW</div>
+            <div class="item" style="font-size: 0.3rem; color: rgba(33, 155, 208, 1) ;line-height: 0.5rem;">储能容量：${data.chunengrongliang} kWh</div>
         `;
     } else {
         // 如果未找到匹配的数据，可以显示一条错误消息或者其他处理方式
@@ -237,9 +247,9 @@ function echarts_you1_1(name) {
     // 检查是否找到了匹配的数据
     if (data) {
         // 使用找到的数据更新页面内容
+        //            <div class="item" style="font-size: 0.3rem; color: rgba(33, 155, 208, 1) ;line-height: 0.5rem;">经济：${data.zuixiaogeshu}</div>
         container.innerHTML = `
-            <div class="item" style="font-size: 0.3rem; color: rgba(33, 155, 208, 1) ;line-height: 0.5rem;">该场站碳减排：${data.tingkaoshuliang}</div>
-            <div class="item" style="font-size: 0.3rem; color: rgba(33, 155, 208, 1) ;line-height: 0.5rem;">经济：${data.zuixiaogeshu}</div>
+            <div class="item" style="font-size: 0.3rem; color: rgba(33, 155, 208, 1) ;line-height: 0.5rem;">该场站碳减排：${data.tingkaoshuliang} </div>
             <div class="item" style="font-size: 0.3rem; color: rgba(33, 155, 208, 1) ;line-height: 0.5rem;">电网负荷：${data.zuixiaogeshu}</div>
             <div class="item" style="font-size: 0.3rem; color: rgba(33, 155, 208, 1) ;line-height: 0.5rem;">光伏利用率：${data.zuixiaogeshu}</div>
             `;
@@ -277,7 +287,7 @@ function echarts_you2() {
         xAxis: [{
             type: 'category',
             name: '范围',
-            data: ['0-2000', '2000-4000', '4000-6000', '6000-8000', '8000-20000'],
+            data: ['0-2000 kWh', '2000-4000 kWh', '4000-6000 kWh', '6000-8000 kWh', '8000-20000 kWh'],
             axisLine: {
                 show: true,
                 lineStyle: {
@@ -380,18 +390,19 @@ function echarts_you3() {
         }
     };
     option = {
-        color: ['#0f63d6', '#0f78d6', '#0f8cd6', '#0fa0d6', '#0fb4d6'],
+        color: ['#52F6DD', '#EC9122', '#0f8cd6', '#0fa0d6', '#0fb4d6'],
         tooltip: {
             show: true,
-            formatter: "{a} : {c} "
+            formatter: function (params) {
+                return params.seriesName + ' : ' + params.value + ' kWh';
+            }
         },
         legend: {
             itemWidth: 10,
             itemHeight: 10,
             itemGap: 12,
             bottom: '3%',
-
-            data: ['38号场站', '3号场站', '20号场站', '7号场站', '32号场站'],
+            data: ['海吉星物流中心', '银川市公共交通公司运营一分公司', '迎宾广场', '北门公交车场', '掌政公交首末站'],
             textStyle: {
                 color: 'rgba(255,255,255,.6)',
             }
@@ -399,7 +410,7 @@ function echarts_you3() {
 
         series: [
             {
-                name: '38号场站',
+                name: '海吉星物流中心',
                 type: 'pie',
                 clockWise: false,
                 center: ['50%', '42%'],
@@ -417,7 +428,7 @@ function echarts_you3() {
                 }]
             },
             {
-                name: '3号场站',
+                name: '银川市公共交通公司运营一分公司',
                 type: 'pie',
                 clockWise: false,
                 center: ['50%', '42%'],
@@ -435,7 +446,7 @@ function echarts_you3() {
                 }]
             },
             {
-                name: '20号场站',
+                name: '迎宾广场',
                 type: 'pie',
                 clockWise: false,
                 hoverAnimation: false,
@@ -448,12 +459,12 @@ function echarts_you3() {
                 }, {
                     value: 10682,
                     name: 'invisible',
-                    tooltip: { show: false },
+                    tooltip: { show: true },
                     itemStyle: placeHolderStyle
                 }]
             },
             {
-                name: '7号场站',
+                name: '北门公交车场',
                 type: 'pie',
                 clockWise: false,
                 hoverAnimation: false,
@@ -471,7 +482,7 @@ function echarts_you3() {
                 }]
             },
             {
-                name: '32号场站',
+                name: '掌政公交首末站',
                 type: 'pie',
                 clockWise: false,
                 hoverAnimation: false,
@@ -496,6 +507,7 @@ function echarts_you3() {
         myChart.resize();
     });
 }
+
 function echarts_4_1(name) {
     // 基于准备好的dom，初始化echarts实例
 
@@ -830,7 +842,7 @@ function echarts_2_1(num) {
         }],
 
         yAxis: [{
-            name: 'KWH',
+            name: 'W',
             type: 'value',
             axisTick: { show: false },
             axisLine: {
@@ -962,10 +974,10 @@ function echarts_3_1(num) {
             }
         },
         grid: {
-            left: '10',
-            top: '30',
-            right: '10',
-            bottom: '10',
+            left: '5%', // 调整左侧边距
+            top: '10%', // 调整顶部边距
+            right: '5%', // 调整右侧边距
+            bottom: '15%', // 调整底部边距
             containLabel: true
         },
 
@@ -997,7 +1009,7 @@ function echarts_3_1(num) {
         }],
 
         yAxis: [{
-            name: 'KWH',
+            name: 'W',
             type: 'value',
             axisTick: { show: false },
             axisLine: {

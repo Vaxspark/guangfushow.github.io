@@ -355,7 +355,7 @@ a:hover {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 30vw;
-	height: 60vh;
+	height: 45vh;
 	z-index: 5;
 	/* 可选：设置内边距，增加内容与边框的间距 */
 	/* 设置地图容器的层级为0 */
