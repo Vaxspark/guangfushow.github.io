@@ -252,7 +252,7 @@ function echarts_you1_1(name) {
                 left: '1%',
                 textStyle: {
                     color: '#fff',
-                    fontSize: '16'
+                    fontSize: 0.15 * fontSize(1)
                 }
             },
             {
@@ -260,7 +260,7 @@ function echarts_you1_1(name) {
                 left: '37%',
                 textStyle: {
                     color: '#fff',
-                    fontSize: '16'
+                    fontSize: 0.15 * fontSize(1)
                 }
             },
             {
@@ -268,7 +268,7 @@ function echarts_you1_1(name) {
                 left: '76%',
                 textStyle: {
                     color: '#fff',
-                    fontSize: '16'
+                    fontSize: 0.15 * fontSize(1)
                 }
             }
         ],
@@ -286,7 +286,7 @@ function echarts_you1_1(name) {
             data: ['利用率', '未利用率', '再利用率', '能源自洽率', '未利用率'],
             textStyle: {
                 color: 'rgba(255,255,255,.5)',
-                fontSize: '12',
+                fontSize: 0.12 * fontSize(1),
             }
         },
         series: [
@@ -346,7 +346,7 @@ function echarts_you1_1(name) {
                     text: data.use.toFixed(2) + '%',
                     textAlign: 'center',
                     fill: '#fff',
-                    fontSize: 16
+                    fontSize: 0.15 * fontSize(1),
                 }
             },
             {
@@ -357,7 +357,7 @@ function echarts_you1_1(name) {
                     text: data.reuse.toFixed(2) + '%',
                     textAlign: 'center',
                     fill: '#fff',
-                    fontSize: 16
+                    fontSize: 0.15 * fontSize(1),
                 }
             },
             {
@@ -368,7 +368,7 @@ function echarts_you1_1(name) {
                     text: data.ESSR.toFixed(2) + '%',
                     textAlign: 'center',
                     fill: '#fff',
-                    fontSize: 16
+                    fontSize: 0.15 * fontSize(1),
                 }
             }
         ]
