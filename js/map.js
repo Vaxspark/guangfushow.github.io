@@ -87,11 +87,12 @@ function initEcharts(geoJson, name, chart, alladcode) {
             document.querySelectorAll('.boxall .alltitle')[3].textContent = params.name + '场站光伏化效益';
             document.querySelectorAll('.boxall .alltitle')[4].textContent = params.name + '光伏发电变化表（天）';
             document.querySelectorAll('.boxall .alltitle')[5].textContent = params.name + '场站季节性光伏量';
-            document.getElementById('场站能源供给').innerHTML = '';
+
             echarts.dispose(document.getElementById('场站日光伏发电量分布'));
             echarts.dispose(document.getElementById('echart6'));
             document.getElementById('场站能源需求').innerHTML = '';
             echarts.dispose(document.getElementById('充电需求排名'));
+            echarts.dispose(document.getElementById('场站能源供给'));
             echarts_zuo1_1(name);
             echarts_you1_1(name);
             echarts_4_1(name);
@@ -136,7 +137,7 @@ function initEcharts(geoJson, name, chart, alladcode) {
         if (params.seriesType === 'scatter') {
             return;
         }
-
+        a
         getGeoJson('640100_full.json').then(function (chinaGeoJson) {
             initEcharts(chinaGeoJson, '银川', chart, alladcode, dataPoints);
         });
@@ -597,6 +598,7 @@ function echarts_4_1(name) {
     var data4 = datadong.find(function (item) {
         return item.name === name;
     });
+
     var datachun1 = [];
     var dataxia1 = [];
     var dataqiu1 = [];
