@@ -84,7 +84,7 @@ function initEcharts(geoJson, name, chart, alladcode) {
             document.querySelectorAll('.boxall .alltitle')[0].textContent = params.name + '场站能源需求与供给'; // 获取所有具有类名为 "boxall" 的元素内部的 "alltitle" 元素
             document.querySelectorAll('.boxall .alltitle')[1].textContent = params.name + '场站充电需求';
             document.querySelectorAll('.boxall .alltitle')[2].textContent = params.name + '光储充优化后充电需求';
-            document.querySelectorAll('.boxall .alltitle')[3].textContent = params.name + '场站光伏化效益';
+            document.querySelectorAll('.boxall .alltitle')[3].textContent = params.name + '场站效益';
             document.querySelectorAll('.boxall .alltitle')[4].textContent = params.name + '光伏发电变化表（天）';
             document.querySelectorAll('.boxall .alltitle')[5].textContent = params.name + '场站季节性光伏量';
 
@@ -296,23 +296,28 @@ function echarts_you1_1(name) {
                 center: ['15%', '45%'],
                 radius: ['40%', '55%'],
                 color: ['#6f938f', '#d6e0df'],
-                label: { show: false },
                 labelLine: { show: false },
+                label: {
+                    show: false,
+                },
                 data: [
                     { value: data.use, name: '利用率' },
                     { value: 100 - data.use, name: '未利用率' }
                 ]
             },
+
             {
                 name: '优化后光伏利用率',
                 type: 'pie',
                 center: ['50%', '45%'],
                 radius: ['40%', '55%'],
                 color: ['#168573', '#d6e0df'],
-                label: { show: false },
+                label: {
+                    show: false,
+                },
                 labelLine: { show: false },
                 data: [
-                    { value: data.reuse, name: '再利用率' },
+                    { value: data.reuse, name: '利用率' },
                     { value: 100 - data.reuse, name: '未利用率' }
                 ]
             },
@@ -321,13 +326,50 @@ function echarts_you1_1(name) {
                 type: 'pie',
                 center: ['85%', '45%'],
                 radius: ['40%', '55%'],
-                color: ['#b3d1b1', '#529578'],
-                label: { show: false },
+                color: ['#b3d1b1', '#809dff'],
+                label: {
+                    show: false,
+                },
                 labelLine: { show: false },
                 data: [
                     { value: data.ESSR, name: '能源自洽率' },
                     { value: 100 - data.ESSR, name: '未利用率' }
                 ]
+            }
+        ],
+        graphic: [
+            {
+                type: 'text',
+                left: '10%',
+                top: '43%',
+                style: {
+                    text: data.use.toFixed(2) + '%',
+                    textAlign: 'center',
+                    fill: '#fff',
+                    fontSize: 16
+                }
+            },
+            {
+                type: 'text',
+                left: '46%',
+                top: '43%',
+                style: {
+                    text: data.reuse.toFixed(2) + '%',
+                    textAlign: 'center',
+                    fill: '#fff',
+                    fontSize: 16
+                }
+            },
+            {
+                type: 'text',
+                left: '80%',
+                top: '43%',
+                style: {
+                    text: data.ESSR.toFixed(2) + '%',
+                    textAlign: 'center',
+                    fill: '#fff',
+                    fontSize: 16
+                }
             }
         ]
     };
@@ -428,7 +470,8 @@ function echarts_you2() {
                 }
             }
         }
-        ]
+        ],
+
     };
 
     // 使用刚指定的配置项和数据显示图表。
