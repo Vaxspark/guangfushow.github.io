@@ -248,16 +248,16 @@ function echarts_you1_1(name) {
     var option = {
         title: [
             {
-                text: '优化前利用率',
-                left: '5%',
+                text: '优化前能源利用率',
+                left: '1%',
                 textStyle: {
                     color: '#fff',
                     fontSize: '16'
                 }
             },
             {
-                text: '优化后利用率',
-                left: '40%',
+                text: '优化后能源利用率',
+                left: '37%',
                 textStyle: {
                     color: '#fff',
                     fontSize: '16'
