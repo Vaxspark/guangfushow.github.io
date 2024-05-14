@@ -100,7 +100,6 @@ function initEcharts(geoJson, name, chart, alladcode) {
             echarts_3_1(data_cnt.num);
             echarts_6_1(data_cnt.num)
         } else {
-
             let clickRegionCode = alladcode.filter(areaJson => areaJson.name === params.name)[0].adcode;
             getGeoJson(clickRegionCode + '.json').then(regionGeoJson => {
                 initEcharts(regionGeoJson, params.name, chart, alladcode, dataPoints);
@@ -136,28 +135,28 @@ function initEcharts(geoJson, name, chart, alladcode) {
     chart.on('dblclick', function (params) {
         if (params.seriesType === 'scatter') {
             return;
+        }else{
+            getGeoJson('640100_full.json').then(function (chinaGeoJson) {
+                initEcharts(chinaGeoJson, '银川', chart, alladcode, dataPoints);
+            });
+            echarts.dispose(document.getElementById('场站日光伏发电量分布'));
+            document.querySelectorAll('.boxall .alltitle')[0].textContent = '场站能源需求'; // 获取所有具有类名为 "boxall" 的元素内部的 "alltitle" 元素
+            document.querySelectorAll('.boxall .alltitle')[1].textContent = '充电需求排名';
+            document.querySelectorAll('.boxall .alltitle')[2].textContent = '每日能耗分布';
+            document.querySelectorAll('.boxall .alltitle')[3].textContent = '场站能源供给';
+            document.querySelectorAll('.boxall .alltitle')[4].textContent = '场站日光伏发电量分布';
+            document.querySelectorAll('.boxall .alltitle')[5].textContent = '场站光伏发电量分布';
+            echarts.dispose(document.getElementById('fb1'));
+            echarts.dispose(document.getElementById('echart6'));
+            echarts.dispose(document.getElementById('充电需求排名'));
+            echarts_zuo1();
+            echarts_zuo2();
+            echarts_you1();
+            echarts_zuo31();
+            echarts_you2();
+            echarts_you3();
         }
-        a
-        getGeoJson('640100_full.json').then(function (chinaGeoJson) {
-            initEcharts(chinaGeoJson, '银川', chart, alladcode, dataPoints);
-        });
-        echarts.dispose(document.getElementById('场站日光伏发电量分布'));
-        document.querySelectorAll('.boxall .alltitle')[0].textContent = '场站能源需求'; // 获取所有具有类名为 "boxall" 的元素内部的 "alltitle" 元素
-        document.querySelectorAll('.boxall .alltitle')[1].textContent = '充电需求排名';
-        document.querySelectorAll('.boxall .alltitle')[2].textContent = '每日能耗分布';
-        document.querySelectorAll('.boxall .alltitle')[3].textContent = '场站能源供给';
-        document.querySelectorAll('.boxall .alltitle')[4].textContent = '场站日光伏发电量分布';
-        document.querySelectorAll('.boxall .alltitle')[5].textContent = '场站光伏发电量分布';
-        echarts.dispose(document.getElementById('fb1'));
-        echarts.dispose(document.getElementById('echart6'));
-        echarts.dispose(document.getElementById('充电需求排名'));
-        echarts_zuo1();
-        echarts_zuo2();
-        echarts_you1();
-        echarts_zuo31();
-        echarts_you2();
-
-        echarts_you3();
+        
     });
 
 }
